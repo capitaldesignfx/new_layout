@@ -1,10 +1,12 @@
-<div class="header">
-  <div class="home-menu pure-menu pure-menu-horizontal pure-menu-pull-right">
-    <a href="#" class="pure-menu-heading"><img class="pure-img" src="assets/images/logo.png"></a>
-      <ul class="pure-menu-list">
-          {% for item in site.data.navigation %}
-            <li class="pure-menu-item{% if page.url == item.link %} pure-menu-selected{% endif %}"><a href="{{ item.link }}" class="pure-menu-link">{{ item.name }}</a></li>
-          {% endfor %}
-      </ul>
-  </div>
+{% include techorrect-logo.svg %}
+<div class="background-dark home-menu pure-menu pure-menu-horizontal pure-menu-pull-right">
+  <svg class="pure-img pure-menu-heading">
+    <use xlink:href="#techorrect-logo" />
+  </svg>
+
+  <ul class="pure-menu-list">
+      {% for item in site.data.navigation %}
+        <li class="pure-menu-item{% if page.url == item.link %} pure-menu-selected{% endif %}"><a href="{{ item.link }}" class="pure-menu-link">{{ item.name }}</a></li>
+      {% endfor %}
+  </ul>
 </div>

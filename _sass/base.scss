@@ -1,0 +1,46 @@
+/*
+ * -- BASE STYLES --
+ */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  line-height: 1.7em;
+  color: #7f8c8d;
+  font-size: 13px;
+}
+
+.default-color {
+  color: #7f8c8d;
+}
+
+.background-white {
+  background: white;
+  color: #1f8dd6;
+  fill: #1f8dd6;
+}
+
+.background-light {
+    background: #1f8dd6;
+    color: white;
+    fill: white;
+}
+
+.background-dark {
+  background: #2d3e50;
+  color: #aaa;
+  fill: #aaa;
+}
+
+/* Hide svg definitions */
+#svg-elegant-line-icon-sprites {
+  display: none;
+}
+
+#svg-techorrect-sprites {
+  display: none;
+}

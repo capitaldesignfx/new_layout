@@ -1,0 +1,59 @@
+/*
+ * -- Components --
+ * Various styles that can be composed together
+ */
+
+.l-pad-vertical-md {
+    padding: 3em 0;
+}
+
+.l-pad-vertical-lrg {
+    padding: 6em 0;
+}
+
+.is-center {
+    text-align: center;
+}
+.header {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.box {
+    padding: 1em;
+}
+
+.box-subhead {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.box-icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.box-text {
+  text-align: center;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+}
+
+.icon-inline {
+  margin: 0 1em;
+}
+
+.width-md {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.width-lrg {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
