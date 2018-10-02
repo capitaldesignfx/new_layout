@@ -11,10 +11,8 @@ Here are the remaining items to do for the website, in order of importance
 * ~~Improve formatting in Contact Us section~~
 * ~~The About page needs to be created~~
 * ~~Blog page needs to be created~~
-* Re-factor code
-  * Use sass variables
+* ~~Re-factor code~~
 * First blog should be written and published
-* README needs to be updated with how to save and publish blogs
 * The `Send Message` functionality needs to be hooked up to actually send email.  Perhaps trigger a lambda?
 * Need to implement CAPTCHA
 * Improve media breakpoints for responsive webpage and overall sizes/formatting/styling
@@ -24,10 +22,12 @@ Here are the remaining items to do for the website, in order of importance
 * Write tests
 * Write deployment pipeline
   * IE clearfixes
-  * Use minified pure libs (perhaps switch use the provided CDNs?)
+  * ~~Use minified pure libs (perhaps switch use the provided CDNs?)~~
   * Use S3 + Cloudfront + Route53
 
 ### Nice to haves
 
+* README needs to be updated with how to save and publish blogs
+* Use sass variables
 * The Techorrect logo SVG still has hardcoded colors in them.  Remove the fill/strokes, and then set them in the CSS.
 * Automate .svg files -> inline SVG creation.  All existing SVGs were done manually

@@ -1,12 +1,17 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/pure.css">
-    <link rel="stylesheet" href="/assets/css/grids-responsive.css">
+    {% if jekyll.environment == "production" %}
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    {% else %}
+      <link rel="stylesheet" href="/assets/css/pure.css">
+      <link rel="stylesheet" href="/assets/css/grids-responsive.css">
+    {% endif %}
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     {% feed_meta %}
     {% seo %}
   </head>

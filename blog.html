@@ -3,21 +3,23 @@ layout: default
 title: Techorrect - Blog
 ---
 <div class="background-white">
-  <div class="l-pad-vertical-md">
-    <h1 class="header is-center">Latest Posts</h1>
-    <div class="width-md pure-g">
-      <div class="blog-index box pure-u-1">
-        <ul>
-          {% for post in site.posts %}
-            <li>
-              <h1>{{ post.title }}</h1>
-              <h2>{{ post.date | date: "%B %-d, %Y" }}</h2>
-              <p>{{ post.excerpt }}</p>
-              <p><a href="{{ post.url }}">continue reading...</a></p>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div> <!-- width-md -->
-  </div> <!-- l-pad-vertical-md" -->
+  <h1 class="header is-center">Latest Posts</h1>
+  <div class="width-md pure-g">
+    <div class="blog-index box pure-u-1">
+      <ul>
+        {% for post in site.posts %}
+          {% assign author = site.authors | where: 'short_name', post.author | first %}
+          <li>
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.excerpt }}</p>
+            <p><a href="{{ post.url }}">continue reading...</a></p>
+            <p class="date">
+              <a href="{{ author.url }}">{{ author.name }}</a> on 
+              {{ post.date | date: "%B %-d, %Y" }}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div> <!-- width-md -->
 </div> <!-- background-white -->
