@@ -17,3 +17,5 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+exclude: ["pure-release-1.0.0", "*.swp", "Session.vim"]
