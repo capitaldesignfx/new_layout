@@ -10,6 +10,9 @@ Here are the remaining items to do for the website, in order of importance
 
 * ~~Improve formatting in Contact Us section~~
 * The About page needs to be created
+* Blog page needs to be created
+* First blog should be written and published
+* README needs to be updated with how to save and publish blogs
 * The `Send Message` functionality needs to be hooked up to actually send email.  Perhaps trigger a lambda?
 * Need to implement CAPTCHA
 * Improve media breakpoints for responsive webpage and overall sizes/formatting/styling
