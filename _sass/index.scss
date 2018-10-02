@@ -26,3 +26,21 @@
     opacity: 0.8;
 }
 
+.contact.box {
+    border-left: 1px solid white;
+} 
+
+.contact address {
+  font-style: normal;
+}
+
+.contact a[href] {
+  color: white;
+}
+
+.contact a:hover,
+.contact a:focus
+{
+  color: #2d3e50;
+}
+

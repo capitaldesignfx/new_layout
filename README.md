@@ -8,7 +8,7 @@ All images are currently inlined SVGs for performance and flexibility.  They can
 
 Here are the remaining items to do for the website, in order of importance
 
-* Improve formatting in Contact Us section
+* ~~Improve formatting in Contact Us section~~
 * The About page needs to be created
 * The `Send Message` functionality needs to be hooked up to actually send email.  Perhaps trigger a lambda?
 * Need to implement CAPTCHA
