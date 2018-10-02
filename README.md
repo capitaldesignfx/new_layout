@@ -6,12 +6,14 @@ All images are currently inlined SVGs for performance and flexibility.  They can
 
 ## TODO
 
-Here are the remaining items to do for the website, in order of importance
+Here are the remaining items to do for the website
 
-* ~~Improve formatting in Contact Us section~~
+* Improve formatting in Contact Us section
 * ~~The About page needs to be created~~
 * ~~Blog page needs to be created~~
 * ~~Re-factor code~~
+* Improve formatting in blog index and blog posts
+* Finish off team bios and pages
 * First blog should be written and published
 * The `Send Message` functionality needs to be hooked up to actually send email.  Perhaps trigger a lambda?
 * Need to implement CAPTCHA
@@ -19,14 +21,14 @@ Here are the remaining items to do for the website, in order of importance
 * SEO - meta tags
 * Google Analytics
 * GDPR notice
+
+### Nice to haves
+
 * Write tests
 * Write deployment pipeline
   * IE clearfixes
   * ~~Use minified pure libs (perhaps switch use the provided CDNs?)~~
   * Use S3 + Cloudfront + Route53
-
-### Nice to haves
-
 * README needs to be updated with how to save and publish blogs
 * Use sass variables
 * The Techorrect logo SVG still has hardcoded colors in them.  Remove the fill/strokes, and then set them in the CSS.
