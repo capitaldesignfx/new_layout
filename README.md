@@ -9,19 +9,23 @@ All images are currently inlined SVGs for performance and flexibility.  They can
 Here are the remaining items to do for the website, in order of importance
 
 * ~~Improve formatting in Contact Us section~~
-* The About page needs to be created
-* Blog page needs to be created
+* ~~The About page needs to be created~~
+* ~~Blog page needs to be created~~
+* Re-factor code
+  * Use sass variables
 * First blog should be written and published
 * README needs to be updated with how to save and publish blogs
 * The `Send Message` functionality needs to be hooked up to actually send email.  Perhaps trigger a lambda?
 * Need to implement CAPTCHA
 * Improve media breakpoints for responsive webpage and overall sizes/formatting/styling
+* SEO - meta tags
 * Google Analytics
 * GDPR notice
 * Write tests
 * Write deployment pipeline
   * IE clearfixes
   * Use minified pure libs (perhaps switch use the provided CDNs?)
+  * Use S3 + Cloudfront + Route53
 
 ### Nice to haves
 

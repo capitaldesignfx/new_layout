@@ -8,7 +8,6 @@
     text-transform: uppercase;
 }
 
-/* This is the main heading that appears on the blue section */
 .splash-head {
     font-size: 20px;
     font-weight: bold;
@@ -20,12 +19,14 @@
     margin: 0;
 }
 
-/* This is the subheading that appears on the blue section */
 .splash-subhead {
     letter-spacing: 0.05em;
     opacity: 0.8;
 }
 
+/*
+ * -- Contact form --
+ */
 .contact.box {
     border-left: 1px solid white;
 } 
@@ -44,3 +45,28 @@
   color: #2d3e50;
 }
 
+/*
+ * -- Team section on about.html --
+ */
+.team .social {
+  text-align: center;
+}
+
+.team a[href] {
+  color: white;
+  fill: #1f8dd6;
+}
+
+.team a:hover,
+.team a:focus
+{
+  color: white;
+  fill: #1f8dd6;
+}
+
+/*
+ * -- blog.html --
+ */
+.blog-index ul {
+  list-style: none;
+}
