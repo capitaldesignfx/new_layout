@@ -10,30 +10,30 @@
 
 body {
   line-height: 1.7em;
-  color: #7f8c8d;
+  color: $medium-gray;
   font-size: 13px;
 }
 
 .default-color {
-  color: #7f8c8d;
+  color: $medium-gray;
 }
 
 .background-white {
   background: white;
-  color: #1f8dd6;
-  fill: #1f8dd6;
+  color: $light-blue;
+  fill: $light-blue;
 }
 
 .background-light {
-    background: #1f8dd6;
+    background: $light-blue;
     color: white;
     fill: white;
 }
 
 .background-dark {
-  background: #2d3e50;
-  color: #aaa;
-  fill: #aaa;
+  background: $dark-blue;
+  color: $light-gray;
+  fill: $light-gray;
 }
 
 /* Hide svg definitions */

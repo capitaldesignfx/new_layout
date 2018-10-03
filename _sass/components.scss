@@ -58,3 +58,25 @@
   margin: 0 auto;
 }
 
+.pager {
+  text-align: center;
+}
+
+.pager li {
+  display: inline;
+  border: 1px solid $medium-gray;
+  padding: 10px;
+  margin-right: -1px; //prevent overlapping border
+}
+
+.pager .pager-selected {
+  background-color: $light-blue;
+}
+
+.pager li a:visited {
+  color: $medium-gray;
+}
+
+.pager li.pager-selected a {
+  color: white;
+}

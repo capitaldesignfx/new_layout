@@ -13,9 +13,24 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      permalink: /posts/:title:output_ext
+      isBlog: true
   - scope:
       path: ""
     values:
       layout: "default"
 
 exclude: ["pure-release-1.0.0", "*.swp", "Session.vim", "README.md", "Gemfile", "Gemfile.lock", "line-icons", "favicon.png", "upload_to_s3.sh"]
+
+pagination:
+  enabled: true
+  indexpage: "blog"
+  per_page: 2
+  permalink: '/page/:num/'
+  title: ':title - page :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail: 
+      before: 2
+      after: 2

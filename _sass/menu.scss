@@ -15,14 +15,14 @@
 }
 
 .home-menu a {
-    color: #6FBEF3;
+    color: $llight-blue;
 }
 
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
-    color: #AECFE5;
+    color: $lllight-blue;
 }
 
 .pure-menu-selected .pure-menu-link,

@@ -1,25 +1,33 @@
 ---
-layout: default
 title: Techorrect - Blog
+pagination: 
+  enabled: true
+isBlog: true
 ---
 <div class="background-white">
   <h1 class="header is-center">Latest Posts</h1>
   <div class="width-md pure-g">
     <div class="blog-index box pure-u-1">
       <ul>
-        {% for post in site.posts %}
+        {% for post in paginator.posts %}
           {% assign author = site.authors | where: 'short_name', post.author | first %}
-          <li>
+          <li class="blog-index-entry">
             <h1>{{ post.title }}</h1>
-            <p>{{ post.excerpt }}</p>
-            <p><a href="{{ post.url }}">continue reading...</a></p>
-            <p class="date">
-              <a href="{{ author.url }}">{{ author.name }}</a> on 
-              {{ post.date | date: "%B %-d, %Y" }}
+            <div class="blog-index-excerpt">{{ post.excerpt }}</div>
+            <p><span class="blog-index-continue">
+                 <a href="{{ post.url }}">continue reading...</a>
+               </span>
+               |
+               <span class="blog-index-author">
+                 <a href="{{ author.url }}">{{ author.name }}</a>
+                 on {{ post.date | date: "%B %-d, %Y" }}
+               </span>
             </p>
           </li>
         {% endfor %}
       </ul>
+
+      {% include pager.html %}
     </div>
   </div> <!-- width-md -->
 </div> <!-- background-white -->

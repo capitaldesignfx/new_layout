@@ -6,7 +6,7 @@
 
   <ul class="pure-menu-list">
       {% for item in site.data.navigation %}
-        <li class="pure-menu-item{% if page.url == item.link %} pure-menu-selected{% endif %}"><a href="{{ item.link }}" class="pure-menu-link">{{ item.name }}</a></li>
+        <li class="pure-menu-item{% if (page.url == item.link or (page.isBlog and item.link == '/blog.html')) %} pure-menu-selected{% endif %}"><a href="{{ item.link }}" class="pure-menu-link">{{ item.name }}</a></li>
       {% endfor %}
   </ul>
 </div>

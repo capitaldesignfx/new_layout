@@ -42,7 +42,7 @@
 .contact a:hover,
 .contact a:focus
 {
-  color: #2d3e50;
+  color: $dark-blue;
 }
 
 /*
@@ -54,19 +54,45 @@
 
 .team a[href] {
   color: white;
-  fill: #1f8dd6;
+  fill: $light-blue;
 }
 
 .team a:hover,
 .team a:focus
 {
   color: white;
-  fill: #1f8dd6;
+  fill: $light-blue;
 }
 
 /*
  * -- blog.html --
  */
+
 .blog-index ul {
   list-style: none;
+}
+
+.blog-index a {
+  color: $light-blue;
+}
+
+.blog-index a:visited {
+  color: $medium-gray;
+}
+
+.blog-index-entry {
+  margin: 0 auto 5em;
+}
+
+.blog-index-excerpt {
+  color: $medium-gray;
+}
+
+.blog-index-continue {
+  margin-right: 1em;
+}
+
+.blog-index-author {
+  margin-left: 1em;
+  color: $medium-gray;
 }
