@@ -12,13 +12,13 @@ Here are the remaining items to do for the website
 * ~~The About page needs to be created~~
 * ~~Blog page needs to be created~~
 * ~~Re-factor code~~
-* Improve formatting in blog index and blog posts
+* ~~Improve formatting in blog index and blog posts~~
 * Finish off team bios and pages
 * First blog should be written and published
 * The `Send Message` functionality needs to be hooked up to actually send email.  Perhaps trigger a lambda?
 * Need to implement CAPTCHA
-* Improve media breakpoints for responsive webpage and overall sizes/formatting/styling
-* SEO - meta tags
+* ~~Improve media breakpoints for responsive webpage and overall sizes/formatting/styling~~
+* ~~SEO - meta tags~~
 * Google Analytics
 * GDPR notice
 
