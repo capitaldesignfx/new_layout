@@ -2,7 +2,6 @@
  * -- index.html --
  */
 .splash {
-    width: 980px;
     margin: auto;
     text-align: center;
     text-transform: uppercase;
@@ -65,34 +64,38 @@
 }
 
 /*
- * -- blog.html --
+ * -- shared blog properties --
  */
-
-.blog-index ul {
-  list-style: none;
+.blog {
+  color: $light-blue;
+  margin: 5em auto;
 }
 
-.blog-index a {
+.blog a,
+.blog a:visited,
+{
+  text-decoration: none;
   color: $light-blue;
 }
 
-.blog-index a:visited {
+.blog-author {
   color: $medium-gray;
 }
 
+/* -- blog-index specific properties -- */
 .blog-index-entry {
-  margin: 0 auto 5em;
+  margin-bottom: 5em;
 }
 
 .blog-index-excerpt {
   color: $medium-gray;
+  margin-bottom: 2em;
 }
 
-.blog-index-continue {
-  margin-right: 1em;
-}
+/* -- blog-post specific properties -- */
 
-.blog-index-author {
-  margin-left: 1em;
+.blog-post-content {
   color: $medium-gray;
+  margin-top: 3em;
 }
+

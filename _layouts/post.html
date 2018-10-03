@@ -1,14 +1,22 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
 
-<p>
-  {{ page.date | date: "%B %-d, %Y" }}
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-    - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-</p>
+<div class="background-white">
+  <div class="width-md pure-g">
+    <div class="blog pure-u-1">
+      <h2 class="header is-underline">{{ page.title }}</h2>
+      <p class="blog-author">
+           posted by
+           {% assign author = site.authors | where: 'short_name', page.author | first %}
+           <a href="{{ author.url }}">{{ author.name }}</a>
+           on {{ page.date | date: "%B %-d, %Y" }}
+      </p>
+      <hr/>
+      <div class="blog-post-content">
+        {{ content }}
+      </div>
+    </div>
+  </div> <!-- pure-g -->
+</div> <!-- background-white -->
 
-{{ content }}

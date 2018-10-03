@@ -2,7 +2,6 @@
  * -- Components --
  * Various styles that can be composed together
  */
-
 .l-pad-vertical-md {
     padding: 3em 0;
 }
@@ -11,9 +10,18 @@
     padding: 6em 0;
 }
 
+.is-underline {
+  text-decoration: underline;
+}
+
 .is-center {
     text-align: center;
 }
+
+.is-justify {
+    text-align: justify;
+}
+
 .header {
     font-weight: 400;
     text-transform: uppercase;
@@ -21,12 +29,16 @@
 }
 
 .box {
-    padding: 1em;
+    padding: 1em 2em 1em;
 }
 
 .box-subhead {
     text-align: center;
     text-transform: uppercase;
+}
+
+.box-text {
+  text-align: justify;
 }
 
 .box-icon {
@@ -46,16 +58,6 @@
 
 .icon-inline {
   margin: 0 1em;
-}
-
-.width-md {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.width-lrg {
-  max-width: 1500px;
-  margin: 0 auto;
 }
 
 .pager {
