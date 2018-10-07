@@ -4,21 +4,26 @@
 
     <div class="pure-g background-light">
       <div class="box pure-u-1 pure-u-md-4-5">
-        <form class="pure-form pure-form-stacked">
+        <form class="pure-form pure-form-stacked" id="email-form">
           <fieldset>
-            <label for="name">Name</label>
+            <label id="name-label" for="name">Name</label>
+            <div id="name-error"></div>
             <input id="name" type="text">
 
-
-            <label for="email">Email</label>
+            <label id="email-label" for="email">Email</label>
+            <div id="email-error"></div>
             <input id="email" type="email">
 
-            <label for="message">Message</label>
+            <label id="message-label" for="message">Message</label>
+            <div id="message-error"></div>
             <textarea id="message" class=""></textarea>
+
+            <div class="g-recaptcha" data-sitekey="6LdSgksUAAAAAGiRPa5lyVSGQQxJTUV0XYJYiYjB"></div>
 
             <button type="submit" class="pure-button">Send Message</button>
           </fieldset>
         </form>
+        <div id="email-result"></div>
       </div>
 
       <div class="contact box pure-u-1 pure-u-md-1-5">
@@ -36,3 +41,118 @@
     </div> <!-- pure-g -->
   </div> <!-- l-pad-vertical-md -->
 </div> <!-- background-dark -->
+
+<script type="text/javascript">
+let form = document.getElementById('email-form');
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let name = document.getElementById('name');
+  let email = document.getElementById('email');
+  let message = document.getElementById('message');
+
+  let isValid = validateFields(name, email, message);
+  if(!isValid)
+    return;
+
+  submitForm(name, email, message);
+});
+
+function validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(String(email).toLowerCase());
+}
+
+function validateFields(name, email, message) {
+  let nameLabel = document.getElementById('name-label');
+  let nameError = document.getElementById('name-error');
+  let emailLabel = document.getElementById('email-label');
+  let emailError = document.getElementById('email-error');
+  let messageLabel = document.getElementById('message-label');
+  let messageError = document.getElementById('message-error');
+
+  let isNameValid = true;
+  let isEmailValid = true;
+  let isMessageValid = true;
+  if(name.value.length == 0) {
+    nameLabel.style.color = 'red';
+    name.style.border = '3px solid red';
+    nameError.innerHTML = "Name can't be empty";
+    isNameValid = false;
+  } else {
+    nameLabel.style.color = 'inherit';
+    name.style.border = 'inherit';
+    nameError.innerHTML = '';
+    isNameValid = true;
+  }
+
+  if(email.value.length == 0) {
+    emailLabel.style.color = 'red';
+    email.style.border = '3px solid red';
+    emailError.innerHTML = "Email can't be empty";
+    isEmailValid = false;
+  } else if (!validateEmail(email.value)) {
+    emailLabel.style.color = 'red';
+    email.style.border = '3px solid red';
+    emailError.innerHTML = 'Please enter a valid email address;';
+    isEmailValid = false;
+  } else {
+    emailLabel.style.color = 'inherit';
+    email.style.border = 'inherit';
+    emailError.innerHTML = '';
+    isEmailValid = true;
+  }
+
+  if(message.value.length == 0) {
+    messageLabel.style.color = 'red';
+    message.style.border = '3px solid red';
+    messageError.innerHTML = "Message can't be empty";
+    isMessageValid = false;
+  } else {
+    messageLabel.style.color = 'inherit';
+    message.style.border = 'inherit';
+    messageError.innerHTML = '';
+    isMessageValid = true;
+  }
+
+  return isNameValid && isEmailValid && isMessageValid;
+}
+
+function submitForm(name, email, message) {
+  let data = JSON.stringify({name: name.value,
+                              email: email.value,
+                              message: message.value});
+
+
+  let resultText = document.getElementById('email-result');
+  resultText.innerHTML = "Sending email...";
+
+  let request = new XMLHttpRequest();
+  /*
+  request.open('POST', 'https://api.techorrect.com/contact-us');
+  request.open('POST', 'http://localhost:4000');
+  */
+  request.open('POST', 'https://api.techorrect.com/contact-us');
+  request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+  request.onreadystatechange = function() {
+    if(request.readyState === 4) {
+      if(request.status === 200) {
+        resultText.innerHTML = "Thanks, your email was sent successfully.  We'll get back to you shortly!";
+        resultText.style.color = 'inherit';
+        name.value = '';
+        email.value = '';
+        message.value = '';
+      } else if (request.status === 400) {
+        resultText.innerHTML = 'There was an error sending your email. ' + request.responseText;
+        resultText.style.color = 'red';
+      } else {
+        resultText.innerHTML = 'There was an error sending your email.  Please try again.';
+        resultText.style.color = 'red';
+      }
+    }
+  };
+
+  request.send(data);
+
+}
+</script>

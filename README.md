@@ -15,10 +15,12 @@ Here are the remaining items to do for the website
 * ~~Improve formatting in blog index and blog posts~~
 * Finish off team bios and pages
 * First blog should be written and published
-* The `Send Message` functionality needs to be hooked up to actually send email.  Perhaps trigger a lambda?
+* ~~The `Send Message` functionality needs to be hooked up to actually send email.~~
 * Need to implement CAPTCHA
+* Fix margins on mobile (blog post images are centered either)
 * ~~Improve media breakpoints for responsive webpage and overall sizes/formatting/styling~~
 * ~~SEO - meta tags~~
+* Add back in calendar thing for setting up meeting
 * Google Analytics
 * GDPR notice
 

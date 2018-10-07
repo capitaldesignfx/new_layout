@@ -23,8 +23,12 @@
     opacity: 0.8;
 }
 
+#email-form input,
+#email-form textarea {
+  color: $dark-blue;
+}
 /*
- * -- Contact form --
+ * -- Contact box --
  */
 .contact.box {
     border-left: 1px solid white;
@@ -34,14 +38,16 @@
   font-style: normal;
 }
 
-.contact a[href] {
-  color: white;
-}
-
 .contact a:hover,
 .contact a:focus
 {
   color: $dark-blue;
+}
+
+#name-error,
+#email-error,
+#message-error {
+  color: red;
 }
 
 /*
@@ -49,18 +55,6 @@
  */
 .team .social {
   text-align: center;
-}
-
-.team a[href] {
-  color: white;
-  fill: $light-blue;
-}
-
-.team a:hover,
-.team a:focus
-{
-  color: white;
-  fill: $light-blue;
 }
 
 /*
