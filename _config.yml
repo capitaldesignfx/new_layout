@@ -25,7 +25,7 @@ exclude: ["pure-release-1.0.0", "*.swp", "Session.vim", "README.md", "Gemfile", 
 pagination:
   enabled: true
   indexpage: "blog"
-  per_page: 3
+  per_page: 5
   permalink: '/page/:num/'
   title: ':title - page :num of :max'
   limit: 0
