@@ -50,6 +50,11 @@
   color: red;
 }
 
+/* Disable submit button by default */
+#submit {
+  disabled: true;
+}
+
 /*
  * -- Team section on about.html --
  */
