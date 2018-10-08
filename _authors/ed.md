@@ -4,3 +4,4 @@ name: Ed Tan
 position: Co-Founder
 ---
 Ed's info goes here
+{: class="author-description"}

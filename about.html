@@ -16,10 +16,10 @@ title: About
     <h2 class="header is-center">Team</h2>
     <div class="team pure-g">
       <div class="box pure-u-1 pure-u-md-1-2">
-        <h3 class="box-subhead">Jeremy Lundy</h3>
-        <p class="is-center default-color">
-          jeremy@techorrect.com
-        </p>
+        {% assign author = site.authors | where:"short_name", "jeremy" | first %}
+        <h3 class="box-subhead"><a href="{{ author.url }}">Jeremy Lundy</a></h3>
+        <a href="mailto:jeremy@techorrect.com">jeremy@techorrect.com</a>
+        {{ author.content }}
         <div class="social">
           <a href="https://ca.linkedin.com/in/jeremy-lundy" target="_blank">
             <svg class="icon-sm">
@@ -29,10 +29,10 @@ title: About
         </div>
       </div>
       <div class="box pure-u-1 pure-u-md-1-2">
-        <h3 class="box-subhead">Ed Tan</h3>
-        <p class="is-center default-color">
-          ed@techorrect.com
-        </p>
+        {% assign author = site.authors | where:"short_name", "ed" | first %}
+        <h3 class="box-subhead"><a href="{{ author.url }}">Ed Tan</a></h3>
+        <a href="mailto:ed@techorrect.com">ed@techorrect.com</a>
+        {{ author.content }}
         <div class="social">
           <a href="https://www.linkedin.com/in/ed-tan" target="_blank">
             <svg class="icon-sm icon-inline">

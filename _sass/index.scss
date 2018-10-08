@@ -21,6 +21,16 @@
 .splash-subhead {
     letter-spacing: 0.05em;
     opacity: 0.8;
+    font-size: 18px
+}
+
+.splash .pure-button-primary {
+  background: white;
+}
+
+.splash a[href] {
+  color: $light-blue;
+  font-size: 20px;
 }
 
 #email-form input,
@@ -70,9 +80,15 @@
 /*
  * -- Team section on about.html --
  */
-.team .social {
+.team {
   text-align: center;
 }
+
+.team .author-description {
+  color: $medium-gray;
+}
+
+
 
 /*
  * -- shared blog properties --
@@ -121,3 +137,21 @@
   margin: 0 auto;
 }
 
+/* -- author -- */
+.author {
+  color: $light-blue;
+  margin: 5em auto;
+  padding: 0 1em;
+}
+
+.author-position {
+  line-height: 0em;
+}
+
+.author-text {
+  color: $medium-gray;
+}
+
+.author-posts {
+  margin-top: 3em;
+}

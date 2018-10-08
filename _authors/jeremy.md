@@ -4,3 +4,4 @@ name: Jeremy Lundy
 position: Co-Founder
 ---
 Jeremy's info goes here
+{: class="author-description"}
