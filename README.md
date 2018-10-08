@@ -13,9 +13,9 @@ Here are the remaining items to do for the website
 * ~~Blog page needs to be created~~
 * ~~Re-factor code~~
 * ~~Improve formatting in blog index and blog posts~~
-* Make nicer links by stripping off the page extensions
+* ~~Make nicer links by stripping off the page extensions~~
 * Finish off team bios
-* First blog should be written and published
+* ~~First blog should be written and published~~
 * ~~The `Send Message` functionality needs to be hooked up to actually send email.~~
 * ~~Need to implement CAPTCHA~~
 * ~~Fix margins on mobile (blog post images are centered either)~~

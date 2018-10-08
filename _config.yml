@@ -13,7 +13,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      permalink: /posts/:title:output_ext
+      permalink: /posts/:title
       isBlog: true
   - scope:
       path: ""
@@ -24,9 +24,10 @@ exclude: ["pure-release-1.0.0", "*.swp", "Session.vim", "README.md", "Gemfile", 
 
 pagination:
   enabled: true
-  indexpage: "blog"
+  indexpage: "index"
   per_page: 5
   permalink: '/page/:num/'
+  extension: 
   title: ':title - page :num of :max'
   limit: 0
   sort_field: 'date'
