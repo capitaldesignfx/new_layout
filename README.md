@@ -29,6 +29,7 @@ Here are the remaining items to do for the website
 * ~~Improve media breakpoints for responsive webpage and overall sizes/formatting/styling~~
 * ~~SEO - meta tags~~
 * Add back in calendar thing for setting up meeting
+* Create 404 error page
 * ~~Google Analytics~~
 * GDPR notice
 
