@@ -36,10 +36,10 @@ Here are the remaining items to do for the website
 
 * Write tests
 * Write deployment pipeline
-  * IE clearfixes
+  * IE polyfills
   * ~~Use minified pure libs (perhaps switch use the provided CDNs?)~~
-  * Use S3 + Cloudfront + Route53
+  * ~~Use S3 + Cloudfront + Route53~~
 * README needs to be updated with how to save and publish blogs
-* Use sass variables
+* ~~Use sass variables~~
 * The Techorrect logo SVG still has hardcoded colors in them.  Remove the fill/strokes, and then set them in the CSS.
 * Automate .svg files -> inline SVG creation.  All existing SVGs were done manually
