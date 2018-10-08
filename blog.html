@@ -11,11 +11,11 @@ permalink: /blog/
       {% for post in paginator.posts %}
         {% assign author = site.authors | where: 'short_name', post.author | first %}
         <div class="blog-index-entry">
-          <h2 class="header is-underline"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <h2 class="header is-underline"><a href="{{ post.url | replace: 'index.html', '' }}">{{ post.title }}</a></h2>
           <div class="blog-index-excerpt">{{ post.excerpt }}</div>
           <p class="blog-author">
             <span class="blog-index-continue">
-               <a href="{{ post.url }}">continue reading...</a>
+               <a href="{{ post.url | replace: 'index.html', '' }}">continue reading...</a>
              </span>
              |
              <span class="blog-index-author">

@@ -13,7 +13,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      permalink: /posts/:title
+      permalink: /posts/:title/index.html
       isBlog: true
   - scope:
       path: ""
