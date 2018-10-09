@@ -4,10 +4,14 @@ Techorrect's website is written using [Jekyll](https://jekyllrb.com) and [Pure.c
 
 All images are currently inlined SVGs for performance and flexibility.  They can be found under `_includes`.  The line icons were obtained from [Elegant Themes](https://www.elegantthemes.com/blog/freebie-of-the-week/free-line-style-icons), and then were inlined into SVGs manually
 
+Initial setup:
+* Install Ruby, the bundler gem, and Jekyll
+* Run `bundle install` in this repo directory
+
 To update the site:
 
-* Update Jekyll source code
-* Test locally by running `jekyll server`, and then going to [http://localhost:4000](http://localhost:4000)
+* Update source code
+* Test locally by running `bundle exec jekyll server`, and then going to [http://localhost:4000](http://localhost:4000)
 * Run `./upload_to_s3.sh`, which will build the prod version (includes google analytics and minified css), and upload the files directly to the techorrect-website s3 bucket
 * (optional) Manually invalidate the Cloudfront distribution cache.  If this isn't done, the Cloudfront cache will expire within the next 24 hours and the site should be updated then.
 
