@@ -1,12 +1,16 @@
 # Techorrect.com website
 
-Techorrect's website is written using [Jekyll](https://jekyllrb.com) and [Pure.css](https://purecss.io).  To develop and test the site locally, run `jekyll s` in this repo, and it should launch the site at [http://localhost:4000](http://localhost:4000).  Jekyll makes it easy to write blog posts via git and markdown, and Pure.css is a lightweight CSS library.
+Techorrect's website is written using [Jekyll](https://jekyllrb.com) and [Pure.css](https://purecss.io).  Jekyll makes it easy to write blog posts via git and markdown, and Pure.css is a lightweight CSS library.
 
-All images are currently inlined SVGs for performance and flexibility.  They can be found under `_includes`.  The line icons were obtained from [Elegant Themes](https://www.elegantthemes.com/blog/freebie-of-the-week/free-line-style-icons), and then were inlined into SVGs manually
+Images for the main techorrect.com site are currently inlined SVGs for performance and flexibility.  They can be found under `_includes`.  The line icons were obtained from [Elegant Themes](https://www.elegantthemes.com/blog/freebie-of-the-week/free-line-style-icons), and then were inlined into SVGs manually
 
-Initial setup:
+For simplicity, images for the blog are placed under /assets/images/, and then referenced from the blog posts.
+
+Initial setup and local testing:
+
 * Install Ruby, the bundler gem, and Jekyll
 * Run `bundle install` in this repo directory
+* `bundle exec jekyll server`, then go to [http://localhost:4000](http://localhost:4000)
 
 To update the site:
 
