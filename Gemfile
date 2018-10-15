@@ -8,3 +8,7 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   gem 'jekyll-paginate-v2'
 end
+
+group :development, :test do
+  gem 'html-proofer'
+end
