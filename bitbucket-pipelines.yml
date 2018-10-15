@@ -1,9 +1,10 @@
-image: ruby:2.4.3
 
 pipelines:
   branches:
     master:
       - step:
+          name: Build and test
+          image: ruby:2.4.3
           caches:
             - bundler
           script:
@@ -13,6 +14,16 @@ pipelines:
             - bundle install
             - JEKYLL_ENV=production bundle exec jekyll build
             - bundle exec htmlproofer _site/ --http-status-ignore "999" --check-html --trace
+          artifacts:
+            - _site/**
+      - step:
+          name: Deploy to S3
+          image: mesosphere/aws-cli
+          deployment: production
+          script:
+            - export AWS_DEFAULT_REGION="us-east-2"
+            - aws s3 sync --exclude "assets/css/styles.css" _site/ s3://techorrect-website
+            - aws s3 sync --exclude "*" --include "assets/css/styles.css" --metadata-directive REPLACE --content-type "text/css" --cache-control max-age=86400 _site/ s3://techorrect-website
 
 definitions:
   caches:
