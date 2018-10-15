@@ -1,0 +1,16 @@
+image: ruby:2.4.3
+
+pipelines:
+  branches:
+    master:
+      - step:
+          caches:
+            - bundler
+          script:
+            - bundle install
+            - JEKYLL_ENV=production bundle exec jekyll build
+            - bundle exec htmlproofer _site/ --http-status-ignore "999" --check-html
+
+definitions:
+  caches:
+    bundler: ./vendor
