@@ -11,12 +11,14 @@ Initial setup and local testing:
 * Install Ruby, the bundler gem, and Jekyll
 * Run `bundle install` in this repo directory
 * `bundle exec jekyll server`, then go to [http://localhost:4000](http://localhost:4000)
+* Run `test.sh` to validate HTML and check for broken links
 
 To update the site:
 
 * Update source code
 * Test locally by running `bundle exec jekyll server`, and then going to [http://localhost:4000](http://localhost:4000)
-* Run `./upload_to_s3.sh`, which will build the prod version (includes google analytics and minified css), and upload the files directly to the techorrect-website s3 bucket
+* ~~Run `./upload_to_s3.sh`, which will build the prod version (includes google analytics and minified css), and upload the files directly to the techorrect-website s3 bucket~~
+* Push your changes to master.  Bitbucket pipelines will then run tests and deploy your code to S3.  Please avoid commiting to master unless you actually want to deploy, because the free Bitbucket account only has 50 minutes of pipeline minutes.  Use pull requests instead to manage pending changes
 * (optional) Manually invalidate the Cloudfront distribution cache.  If this isn't done, the Cloudfront cache will expire within the next 24 hours and the site should be updated then.
 
 ## TODO
@@ -39,6 +41,8 @@ Here are the remaining items to do for the website
 * Add back in calendar thing for setting up meeting
 * Create 404 error page
 * ~~Google Analytics~~
+* Build/use a docker image with all the gems already available, to reduce the build times and pipeline minutes
+* Add a way to update the Cloudfront distribution cache.  This task should wait until we actually launch the production website.
 * GDPR notice
 
 ### Nice to haves
