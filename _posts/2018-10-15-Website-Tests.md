@@ -9,3 +9,5 @@ Since our website's source code repository is hosted on Bitbucket, we use [Bitbu
 The screenshot below shows our pipeline.  It has two steps - "`Build and test`" and "`Deploy to S3`".  The first step uses a `ruby` image that builds the static pages and runs the html-proofer tests.  The second step uses the [mesosphere/aws-cli](https://hub.docker.com/r/mesosphere/aws-cli/) image which pushes the new files to our AWS S3 bucket.  The `aws-cli` image checks for AWS credentials in some environment variables, so we created a dedicated IAM user for this pipeline, and stored the credentials using Bitbucket's [secured variables](https://confluence.atlassian.com/bitbucket/environment-variables-794502608.html#Environmentvariables-Securedvariables).
 
 ![techorrect.com's bitbucket pipeline](/assets/images/techorrect-bitbucket-pipeline.png)
+
+If you would like to learn more about setting up similar pipelines and processes for your own software development projects, we'd love to chat - feel free to contact us at [info@techorrect.com](mailto:info@techorrect.com).
