@@ -20,39 +20,3 @@ To update the site:
 * ~~Run `./upload_to_s3.sh`, which will build the prod version (includes google analytics and minified css), and upload the files directly to the techorrect-website s3 bucket~~
 * Push your changes to master.  Bitbucket pipelines will then run tests and deploy your code to S3.  Please avoid commiting to master unless you actually want to deploy, because the free Bitbucket account only has 50 minutes of pipeline minutes.  Use pull requests instead to manage pending changes
 * (optional) Manually invalidate the Cloudfront distribution cache.  If this isn't done, the Cloudfront cache will expire within the next 24 hours and the site should be updated then.
-
-## TODO
-
-Here are the remaining items to do for the website
-
-* ~~Improve formatting in Contact Us section~~
-* ~~The About page needs to be created~~
-* ~~Blog page needs to be created~~
-* ~~Re-factor code~~
-* ~~Improve formatting in blog index and blog posts~~
-* ~~Make nicer links by stripping off the page extensions~~
-* ~~Finish off team bios~~
-* ~~First blog should be written and published~~
-* ~~The `Send Message` functionality needs to be hooked up to actually send email.~~
-* ~~Need to implement CAPTCHA~~
-* ~~Fix margins on mobile (blog post images are centered either)~~
-* ~~Improve media breakpoints for responsive webpage and overall sizes/formatting/styling~~
-* ~~SEO - meta tags~~
-* Add back in calendar thing for setting up meeting
-* Create 404 error page
-* ~~Google Analytics~~
-* Build/use a docker image with all the gems already available, to reduce the build times and pipeline minutes
-* Add a way to update the Cloudfront distribution cache.  This task should wait until we actually launch the production website.
-* GDPR notice
-
-### Nice to haves
-
-* Write tests
-* Write deployment pipeline
-  * IE polyfills
-  * ~~Use minified pure libs (perhaps switch use the provided CDNs?)~~
-  * ~~Use S3 + Cloudfront + Route53~~
-* README needs to be updated with how to save and publish blogs
-* ~~Use sass variables~~
-* The Techorrect logo SVG still has hardcoded colors in them.  Remove the fill/strokes, and then set them in the CSS.
-* Automate .svg files -> inline SVG creation.  All existing SVGs were done manually
