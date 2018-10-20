@@ -20,7 +20,7 @@ defaults:
     values:
       layout: "default"
 
-exclude: ["pure-release-1.0.0", "*.swp", "Session.vim", "README.md", "Gemfile", "Gemfile.lock", "line-icons", "favicon.png", "upload_to_s3.sh", "test.sh", "bitbucket-pipelines.yml"]
+exclude: ["pure-release-1.0.0", "*.swp", "Session.vim", "README.md", "Gemfile", "Gemfile.lock", "line-icons", "favicon.png", "upload_to_s3.sh", "test.sh", "bitbucket-pipelines.yml", "Dockerfile"]
 
 pagination:
   enabled: true
