@@ -10,46 +10,47 @@ permalink: /team/
       <div class="box pure-u-1 pure-u-md-1-2">
         {% assign author = site.authors | where:"short_name", "jeremy" | first %}
         <a href="{{ author.url | replace: 'index.html', '' }}">
-        <h3 class="box-subhead">Jeremy Lundy</h3>
+        <h3 class="box-subhead">{{ author.name }}</h3>
         <div class="profile-pic">
-          {% include jeremy.jpeg %}
+          {% include {{ author.pic }} %}
         </div>
         </a>
-        <a href="mailto:jeremy@techorrect.com">jeremy@techorrect.com</a>
+        <a href="mailto:{{ author.email }}">{{ author.email }}</a>
         <div class="author-description">
         {{ author.content }}
         </div>
         <div class="social">
-          <a href="https://ca.linkedin.com/in/jeremy-lundy" target="_blank">
-            <svg class="icon-sm">
-              <use xlink:href="#linkedin" />
-            </svg>
-          </a>
+          {% if author.linkedin %}
+            {% capture linkedinUrl %}{{ author.linkedin }}{% endcapture %}
+            {% include linkedin.html url=linkedinUrl %}
+          {% endif %}
+          {% if author.website %}
+            {% capture websiteUrl %}{{ author.website }}{% endcapture %}
+            {% include website.html url=websiteUrl %}
+          {% endif %}
         </div>
       </div>
       <div class="box pure-u-1 pure-u-md-1-2">
         {% assign author = site.authors | where:"short_name", "ed" | first %}
         <a href="{{ author.url | replace: 'index.html', '' }}">
-        <h3 class="box-subhead">Ed Tan</h3>
+        <h3 class="box-subhead">{{ author.name }}</h3>
         <div class="profile-pic">
-          {% include ed.jpeg %}
+          {% include {{ author.pic }} %}
         </div>
         </a>
-        <a href="mailto:ed@techorrect.com">ed@techorrect.com</a>
+        <a href="mailto:{{ author.email }}">{{ author.email }}</a>
         <div class="author-description">
         {{ author.content }}
         </div>
         <div class="social">
-          <a href="https://www.linkedin.com/in/ed-tan" target="_blank">
-            <svg class="icon-sm icon-inline">
-              <use xlink:href="#linkedin" />
-            </svg>
-          </a>
-          <a href="https://edtan.ca/" target="_blank">
-            <svg class="icon-sm icon-inline">
-              <use xlink:href="#global" />
-            </svg>
-          </a>
+          {% if author.linkedin %}
+            {% capture linkedinUrl %}{{ author.linkedin }}{% endcapture %}
+            {% include linkedin.html url=linkedinUrl %}
+          {% endif %}
+          {% if author.website %}
+            {% capture websiteUrl %}{{ author.website }}{% endcapture %}
+            {% include website.html url=websiteUrl %}
+          {% endif %}
         </div>
       </div>
     </div> <!-- pure-g -->

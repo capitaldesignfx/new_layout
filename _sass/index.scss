@@ -154,6 +154,8 @@
 
 .author .profile-pic img {
   max-width: 90%;
+  display: block;
+  margin: 0 auto 1em;
 }
 
 .author-text {
@@ -162,4 +164,13 @@
 
 .author-posts {
   margin-top: 3em;
+}
+
+/* -- social media icons container */
+.social {
+  text-align: center;
+}
+
+.social svg {
+  margin: 0 1em;
 }

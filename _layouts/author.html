@@ -10,6 +10,17 @@ layout: default
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1-5 profile-pic">
           {% include {{ page.pic }} %}
+          <div class="social">
+            <a href="mailto:{{ page.email }}"><p>{{ page.email }}</p></a>
+            {% if page.linkedin %}
+              {% capture linkedinUrl %}{{ page.linkedin }}{% endcapture %} 
+              {% include linkedin.html url=linkedinUrl %}
+            {% endif %}
+            {% if page.website %}
+              {% capture websiteUrl %}{{ page.website }}{% endcapture %}
+              {% include website.html url=websiteUrl %}
+            {% endif %}
+          </div>
         </div>
         <div class="pure-u-1 pure-u-md-4-5 author-text">
           {{ content }}
