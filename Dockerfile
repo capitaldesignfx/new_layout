@@ -4,7 +4,7 @@ ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
 ENV LC_ALL C.UTF-8
 
-RUN apk --no-cache add build-base
+RUN apk --no-cache add build-base libcurl
 
 COPY . /app
 WORKDIR /app
