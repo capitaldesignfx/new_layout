@@ -78,18 +78,21 @@
 }
 
 /*
- * -- Team section on about.html --
+ * -- Team section on team.html --
  */
 .team {
   text-align: center;
 }
 
+.team .profile-pic img {
+  height: 300px;
+}
+
 .team .author-description {
   color: $medium-gray;
   text-align: justify;
+  min-height: 230px;
 }
-
-
 
 /*
  * -- shared blog properties --
@@ -147,6 +150,10 @@
 
 .author-position {
   line-height: 0em;
+}
+
+.author .profile-pic img {
+  max-width: 90%;
 }
 
 .author-text {

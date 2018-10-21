@@ -9,9 +9,16 @@ permalink: /team/
     <div class="team pure-g">
       <div class="box pure-u-1 pure-u-md-1-2">
         {% assign author = site.authors | where:"short_name", "jeremy" | first %}
-        <h3 class="box-subhead"><a href="{{ author.url | replace: 'index.html', '' }}">Jeremy Lundy</a></h3>
+        <a href="{{ author.url | replace: 'index.html', '' }}">
+        <h3 class="box-subhead">Jeremy Lundy</h3>
+        <div class="profile-pic">
+          {% include jeremy.jpeg %}
+        </div>
+        </a>
         <a href="mailto:jeremy@techorrect.com">jeremy@techorrect.com</a>
+        <div class="author-description">
         {{ author.content }}
+        </div>
         <div class="social">
           <a href="https://ca.linkedin.com/in/jeremy-lundy" target="_blank">
             <svg class="icon-sm">
@@ -22,9 +29,16 @@ permalink: /team/
       </div>
       <div class="box pure-u-1 pure-u-md-1-2">
         {% assign author = site.authors | where:"short_name", "ed" | first %}
-        <h3 class="box-subhead"><a href="{{ author.url | replace: 'index.html', '' }}">Ed Tan</a></h3>
+        <a href="{{ author.url | replace: 'index.html', '' }}">
+        <h3 class="box-subhead">Ed Tan</h3>
+        <div class="profile-pic">
+          {% include ed.jpeg %}
+        </div>
+        </a>
         <a href="mailto:ed@techorrect.com">ed@techorrect.com</a>
+        <div class="author-description">
         {{ author.content }}
+        </div>
         <div class="social">
           <a href="https://www.linkedin.com/in/ed-tan" target="_blank">
             <svg class="icon-sm icon-inline">
