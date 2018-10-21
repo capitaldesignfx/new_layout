@@ -9,4 +9,4 @@ RUN apk --no-cache add build-base
 COPY . /app
 WORKDIR /app
 
-RUN bundle install && rm -rf /app
+RUN bundle install
