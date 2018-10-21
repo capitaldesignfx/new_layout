@@ -17,6 +17,6 @@ To update the site:
 
 * Update source code
 * Test locally by running `bundle exec jekyll server`, and then going to [http://localhost:4000](http://localhost:4000)
-* ~~Run `./upload_to_s3.sh`, which will build the prod version (includes google analytics and minified css), and upload the files directly to the techorrect-website s3 bucket~~
+* ~~(This step has been replaced by the pipeline in the next point.)  Run `./upload_to_s3.sh`, which will build the prod version (includes google analytics and minified css), and upload the files directly to the techorrect-website s3 bucket.~~
 * Push your changes to master.  Bitbucket pipelines will then run tests and deploy your code to S3.  Please avoid commiting to master unless you actually want to deploy, because the free Bitbucket account only has 50 minutes of pipeline minutes.  Use pull requests instead to manage pending changes
-* (optional) Manually invalidate the Cloudfront distribution cache.  If this isn't done, the Cloudfront cache will expire within the next 24 hours and the site should be updated then.
+* (optional) Invalidate the Cloudfront distribution cache using `invalidate_cache.sh.example` (replace the environment variable with the CloudFront distribution id).  This step is also commented out in `bitbucket-pipelines.yml`, as there are a limited number of free invalidations per month (1000).   If the cache is not invalidated, the Cloudfront cache will expire within the next 24 hours and the cache will be repopulated on the first request after that.
