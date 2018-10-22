@@ -7,7 +7,7 @@ Welcome!  The techorrect.com website has just been redesigned, and we now have a
 * Pay only for the actual website traffic/usage instead of keeping a VM up 24/7
 * Take advantage of Amazon's CDN - Cloudfront - to ensure low latency
 
-Since we needed to create static pages in order to host them on S3, the site was built using [Jekyll](https://jekyllrb.com).  The site's code is now in git, making it easier to view revision history and test.  Additionally, the email form functionality was implemented using AWS's API Gateway and Lambda.  Therefore, techorrect.com is now what they say, "serverless".  To summarize, here's the overall setup of our website:
+Since we needed to create static pages in order to host them on S3, the site was built using [Jekyll](https://jekyllrb.com).  The site's code is now in git, making it easier to view revision history and test.  Additionally, the email form functionality was implemented using AWS's API Gateway and Lambda.  To summarize, here's the overall setup of our website:
 
 ![techorrect.com site diagram](/assets/images/techorrect-site-diagram.png)
 
