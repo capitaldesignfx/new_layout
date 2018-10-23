@@ -22,6 +22,8 @@ defaults:
 
 exclude: ["pure-release-1.0.0", "*.swp", "Session.vim", "README.md", "Gemfile", "Gemfile.lock", "line-icons", "favicon.png", "upload_to_s3.sh", "test.sh", "bitbucket-pipelines.yml", "Dockerfile", "invalidate_cache.sh*"]
 
+url: https://techorrect.com
+
 pagination:
   enabled: true
   indexpage: "index"
