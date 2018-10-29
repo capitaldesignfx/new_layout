@@ -24,6 +24,8 @@ exclude: ["pure-release-1.0.0", "*.swp", "Session.vim", "README.md", "Gemfile", 
 
 url: https://techorrect.com
 
+emptyArray: []
+
 pagination:
   enabled: true
   indexpage: "index"

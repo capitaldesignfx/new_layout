@@ -72,11 +72,6 @@
   color: red;
 }
 
-/* Disable submit button by default */
-#submit {
-  disabled: true;
-}
-
 /*
  * -- Team section on team.html --
  */
@@ -131,7 +126,8 @@
 
 /* -- blog-post specific properties -- */
 
-.blog-post-content {
+.blog-post-content,
+.blog-post-comments {
   color: $medium-gray;
   margin-top: 3em;
 }
@@ -139,6 +135,18 @@
 .blog-post-content img {
   width: 80%;
   margin: 0 auto;
+}
+
+.blog-post-comments .comments-item {
+  margin-top: 2em;
+}
+
+.blog-post-comments .comments-name {
+  font-weight: bold;
+}
+
+.blog-post-comments .comments-date {
+  color: $light-gray;
 }
 
 /* -- author -- */

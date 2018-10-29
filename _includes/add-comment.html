@@ -1,0 +1,114 @@
+<form class="pure-form pure-form-stacked l-pad-vertical-md" id="comment-form">
+  <fieldset>
+    <label id="message-label" for="message">Message</label>
+    <div id="message-error"></div>
+    <textarea id="message" placeholder="Add a comment..."></textarea>
+
+    <label id="name-label" for="name">Name</label>
+    <div id="name-error"></div>
+    <input id="name" type="text">
+
+    <div class="g-recaptcha" data-sitekey="6LdSgksUAAAAAGiRPa5lyVSGQQxJTUV0XYJYiYjB" data-callback="enableSubmit"></div>
+
+    <button type="submit" class="pure-button pure-button-disabled" id="submit">Add comment</button>
+  </fieldset>
+</form>
+<div id="result"></div>
+
+<script>
+let form = document.getElementById('comment-form');
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let name = document.getElementById('name');
+  let message = document.getElementById('message');
+
+  let isValid = validateFields(name, message);
+  if(!isValid)
+    return;
+
+  submitForm(name, message);
+});
+
+function enableSubmit() {
+  document.getElementById("submit").classList.remove('pure-button-disabled');
+}
+
+function disableSubmit() {
+  document.getElementById("submit").classList.add('pure-button-disabled');
+}
+
+function validateFields(name, message) {
+  let nameLabel = document.getElementById('name-label');
+  let nameError = document.getElementById('name-error');
+  let messageLabel = document.getElementById('message-label');
+  let messageError = document.getElementById('message-error');
+
+  let isNameValid = true;
+  let isMessageValid = true;
+  if(name.value.length == 0) {
+    nameLabel.style.color = 'red';
+    name.style.border = '3px solid red';
+    nameError.innerHTML = "Name can't be empty";
+    isNameValid = false;
+  } else {
+    nameLabel.style.color = 'inherit';
+    name.style.border = '1px solid #ccc';
+    nameError.innerHTML = '';
+    isNameValid = true;
+  }
+
+  if(message.value.length == 0) {
+    messageLabel.style.color = 'red';
+    message.style.border = '3px solid red';
+    messageError.innerHTML = "Message can't be empty";
+    isMessageValid = false;
+  } else {
+    messageLabel.style.color = 'inherit';
+    message.style.border = '1px solid #ccc';
+    messageError.innerHTML = '';
+    isMessageValid = true;
+  }
+
+  return isNameValid && isMessageValid;
+}
+
+function submitForm(name, message) {
+  captcha = grecaptcha.getResponse();
+  let data = JSON.stringify({name: name.value,
+                              message: message.value,
+                              blogTitle: '{{ include.title }}',
+                              captcha: captcha});
+
+  console.log(data);
+
+
+  let resultText = document.getElementById('result');
+  resultText.innerHTML = "Submitting comment...";
+
+  let request = new XMLHttpRequest();
+  request.open('POST', 'https://api.techorrect.com/add-comment');
+  request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+  request.onreadystatechange = function() {
+    if(request.readyState === 4) {
+      if(request.status === 200) {
+        resultText.innerHTML = "Thanks for submitting your comment. We'll add it shortly!";
+        resultText.style.color = 'inherit';
+        name.value = '';
+        message.value = '';
+        grecaptcha.reset();
+        disableSubmit();
+      } else if (request.status === 400) {
+        resultText.innerHTML = 'There was an error submitting your comment.' + request.responseText;
+        resultText.style.color = 'red';
+      } else {
+        resultText.innerHTML = 'There was an error submitting your comment.  Please try again.';
+        resultText.style.color = 'red';
+      }
+    }
+  };
+
+  request.send(data);
+
+}
+</script>

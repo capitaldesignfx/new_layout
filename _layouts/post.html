@@ -16,6 +16,29 @@ layout: default
       <div class="blog-post-content">
         {{ content }}
       </div>
+
+      <hr/>
+      <div class="blog-post-comments">
+          {% capture slug %}{{ page.slug | downcase | replace: '.', '-' }}{% endcapture %}
+          {% assign comments_map = site.data.comments[slug] %}
+          {% assign comments = site.emptyArray %}
+          {% for comment in comments_map %}
+            {% assign comments = comments | push: comment[1] %}
+          {% endfor %}
+          {% assign comment_count = comments | size %}
+          <h2>Comments ({% if comment_count == 1 %}One response{% else %}{{ comment_count }} responses{% endif %})</h2>
+          {% assign sorted_comments = comments | sort: 'date' %}
+          {% for comment in sorted_comments %}
+            <div class="comments-item">
+              <span class="comments-name">{{ comment.name }}</span>
+              |
+              <span class="comments-date">{{ comment.date | date: "%F %T" }}</span>
+              <div class="comments-message">{{ comment.message }}</div>
+            </div>
+          {% endfor %}
+
+          {% include add-comment.html title=slug %}
+      </div>
     </div>
   </div> <!-- pure-g -->
 </div> <!-- background-white -->
