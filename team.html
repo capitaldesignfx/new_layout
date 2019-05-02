@@ -7,8 +7,10 @@ permalink: /team/
   <div class="l-pad-vertical-md width-md">
     <h2 class="header is-center">Team</h2>
     <div class="team pure-g">
+      {% assign names = "jeremy,ed,kirk" | split: "," %}
+      {% for name in names %}
       <div class="box pure-u-1 pure-u-md-1-2">
-        {% assign author = site.authors | where:"short_name", "jeremy" | first %}
+        {% assign author = site.authors | where:"short_name", name | first %}
         <a href="{{ author.url | replace: 'index.html', '' }}">
         <h3 class="box-subhead">{{ author.name }}</h3>
         <div class="profile-pic">
@@ -30,52 +32,7 @@ permalink: /team/
           {% endif %}
         </div>
       </div>
-      <div class="box pure-u-1 pure-u-md-1-2">
-        {% assign author = site.authors | where:"short_name", "ed" | first %}
-        <a href="{{ author.url | replace: 'index.html', '' }}">
-        <h3 class="box-subhead">{{ author.name }}</h3>
-        <div class="profile-pic">
-          {% include {{ author.pic }} %}
-        </div>
-        </a>
-        <a href="mailto:{{ author.email }}">{{ author.email }}</a>
-        <div class="author-description">
-        {{ author.content }}
-        </div>
-        <div class="social">
-          {% if author.linkedin %}
-            {% capture linkedinUrl %}{{ author.linkedin }}{% endcapture %}
-            {% include linkedin.html url=linkedinUrl %}
-          {% endif %}
-          {% if author.website %}
-            {% capture websiteUrl %}{{ author.website }}{% endcapture %}
-            {% include website.html url=websiteUrl %}
-          {% endif %}
-        </div>
-      </div>
-      <div class="box pure-u-1 pure-u-md-1-2">
-        {% assign author = site.authors | where:"short_name", "kirk" | first %}
-        <a href="{{ author.url | replace: 'index.html', '' }}">
-        <h3 class="box-subhead">{{ author.name }}</h3>
-        <div class="profile-pic">
-          {% include {{ author.pic }} %}
-        </div>
-        </a>
-        <a href="mailto:{{ author.email }}">{{ author.email }}</a>
-        <div class="author-description">
-        {{ author.content }}
-        </div>
-        <div class="social">
-          {% if author.linkedin %}
-            {% capture linkedinUrl %}{{ author.linkedin }}{% endcapture %}
-            {% include linkedin.html url=linkedinUrl %}
-          {% endif %}
-          {% if author.website %}
-            {% capture websiteUrl %}{{ author.website }}{% endcapture %}
-            {% include website.html url=websiteUrl %}
-          {% endif %}
-        </div>
-      </div>
+      {% endfor %}
     </div> <!-- pure-g -->
   </div> <!-- l-pad-vertical-md -->
 </div> <!-- background-white -->
