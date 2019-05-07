@@ -8,4 +8,4 @@ linkedin: https://www.linkedin.com/in/ed-tan
 website: https://edtan.ca
 permalink: /authors/ed/index.html
 ---
-Ed previously worked for Fast Enterprises as a Technical Team lead for over 7 years on government revenue agency projects in the US, Canada, and Poland.  He then spent a year-and-a-half doing R&D and software development for Mapsted, an indoor-positioning technology startup, and contributed to a company patent.  Ed has a Bachelors of Science in Mathematics and Engineering from Queen's University.
+Ed has over 10 years of experience as an IT professional working on system design, and network, database, and security administration in Canada, the United States, and Poland with a variety of companies from startups to enterprises.  Ed is an avid contributor to open-source DevOps software.  In his free time, Ed enjoys playing jazz guitar and Brazilian Jiu Jitsu.
