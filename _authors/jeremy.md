@@ -7,6 +7,4 @@ email: jeremy@techorrect.com
 linkedin: https://ca.linkedin.com/in/jeremy-lundy
 permalink: /authors/jeremy/index.html
 ---
-Jeremy started at Fast Enterprises, a government revenue software company, doing data conversion, system integration, system administration and database administration for the Ontario, California and Michigan governments.
-
-Jeremy then joined Ericsson and worked as a developer, architect and line manager on Enterprise Catalog software supporting every stage of development from design to sales to production support.
+Jeremy has spent over a decade working in the government and telecom sectors doing implementation consulting and product development. He has participated in all phases of the software development lifecycle from design, development and testing to pre-sales support and client implementation. He has managed large teams through DevOps and Agile transformations. Jeremy enjoys playing basketball and watching rugby.
