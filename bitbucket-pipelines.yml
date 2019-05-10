@@ -16,6 +16,6 @@ pipelines:
           deployment: production
           script:
             - export AWS_DEFAULT_REGION="us-east-2"
-            - aws s3 sync --exclude "assets/css/styles.css" _site/ s3://techorrect-website
+            - aws s3 sync --exclude "assets/css/styles.css" --delete _site/ s3://techorrect-website
             - aws s3 sync --exclude "*" --include "assets/css/styles.css" --metadata-directive REPLACE --content-type "text/css" --cache-control max-age=86400 _site/ s3://techorrect-website
             #- aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
