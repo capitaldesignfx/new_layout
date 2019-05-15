@@ -19,3 +19,22 @@ pipelines:
             - aws s3 sync --exclude "assets/css/styles.css" --delete _site/ s3://techorrect-website
             - aws s3 sync --exclude "*" --include "assets/css/styles.css" --metadata-directive REPLACE --content-type "text/css" --cache-control max-age=86400 _site/ s3://techorrect-website
             #- aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
+    newLayout:
+      - step:
+          name: Build and test
+          image: edtan1/techorrect.com
+          script:
+            - bundle install
+            - JEKYLL_ENV=production bundle exec jekyll build
+            - bundle exec htmlproofer _site/ --http-status-ignore "999" --check-html --trace
+          artifacts:
+            - _site/**
+      - step:
+          name: Deploy to S3
+          image: mesosphere/aws-cli
+          deployment: staging
+          script:
+            - export AWS_DEFAULT_REGION="us-east-2"
+            - aws s3 sync --exclude "assets/css/styles.css" --delete _site/ s3://staging.techorrect.com
+            - aws s3 sync --exclude "*" --include "assets/css/styles.css" --metadata-directive REPLACE --content-type "text/css" --cache-control max-age=86400 _site/ s3://staging.techorrect.com
+            #- aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
