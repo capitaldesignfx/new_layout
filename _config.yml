@@ -40,4 +40,4 @@ pagination:
       before: 2
       after: 2
 
-theme: jekyll-theme-cayman
+remote_theme: CloudCannon/hydra-jekyll-template
